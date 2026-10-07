@@ -1,0 +1,55 @@
+{
+  "name": "@voidly/pay-marketplace-agentkit",
+  "version": "0.1.0",
+  "description": "Coinbase AgentKit actions for public Voidpay reads and opt-in wallet-kit commerce",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voidly-ai/pay-marketplace-agentkit"
+  },
+  "homepage": "https://github.com/voidly-ai/pay-marketplace-agentkit#readme",
+  "bugs": "https://github.com/voidly-ai/pay-marketplace-agentkit/issues",
+  "type": "module",
+  "engines": {
+    "node": ">=24.15.0 <25"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "audit:pack": "npm test && node scripts/check-packed-tarball.mjs",
+    "prepack": "npm test"
+  },
+  "dependencies": {
+    "@voidly/agent-wallet": "0.2.0",
+    "@voidly/pay-mcp": "0.7.1",
+    "zod": "^3.25.76"
+  },
+  "peerDependencies": {
+    "@coinbase/agentkit": "0.10.4"
+  },
+  "devDependencies": {
+    "@coinbase/agentkit": "0.10.4",
+    "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "keywords": [
+    "voidpay",
+    "marketplace",
+    "coinbase-agentkit",
+    "action-provider",
+    "wallet-kit"
+  ]
+}
